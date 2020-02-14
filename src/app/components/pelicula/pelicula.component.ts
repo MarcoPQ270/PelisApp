@@ -17,7 +17,7 @@ export class PeliculaComponent implements OnInit {
     console.log();
     this.router.params.subscribe(parametros => {
       console.log(parametros);
-
+      this.PeliculasSer.getPelicula(parametros.id).subscribe(pelicula => this.pelicula = pelicula);
     });
   }
 
