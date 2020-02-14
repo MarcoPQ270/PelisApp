@@ -5,18 +5,32 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PeliculaImagenPipe implements PipeTransform {
 
-  transform(pelicula: any ): any {
-const url = 'http://image.tmdb.org/t/p/w500';
+  transform( pelicula: any, poster: boolean = false ): any {
 
-if (pelicula.backdrop_path) {
-         return url + pelicula.backdrop_path;
-    } else {
-      if (pelicula.poster_path) {
-        return url + pelicula.poster_path;
-      } else {
+    // console.log( 'Pelicula en pipe', pelicula );
+
+    if ( !pelicula ) {
         return 'assets/img/noimage.png';
-      }
     }
-  }
+
+    const url = 'http://image.tmdb.org/t/p/w500';
+    if ( poster ) {
+       return url + pelicula.poster_path;
+       }
+    if ( pelicula.backdrop_path ) {
+         return url + pelicula.backdrop_path;
+         } else {
+           if ( pelicula.poster_path ) {
+           return url + pelicula.poster_path;
+         } else {
+             return 'assets/img/noimage.png';
+                }
+             }
+     }
+
 
 }
+
+
+
+
