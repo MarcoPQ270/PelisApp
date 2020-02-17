@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{pelicula.original_title}}</h5>
                     <p class="card-text text-justify">{{pelicula.overview|slice:0:200}} ...</p>
-                    <button class="btn btn-primary btn-block">Ver mas</button>
+                    <button class="btn btn-outline-primary btn-block" [routerLink]="['/pelicula', pelicula.id, 'search', buscar]">Ver mas</button>
                 </div>
             </div>
         </div>

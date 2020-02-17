@@ -12,7 +12,8 @@
             <h5>Puntuacion</h5>
             <span class="badge badge-primary">{{pelicula.vote_average}}</span>
             <h5>Popularidad</h5>
-            <span class="badge badge-primary">{{pelicula.popularity | number:'.0'}}</span>
+            <span class="badge badge-primary">{{pelicula.popularity | number:'.0'}}</span> <br><br>
+            <button [routerLink]="['/'+RegresarA, busqueda]" class="btn btn-outline-danger" type="button">Regresar</button>
         </div>
     </div>
 </div>
