@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  buscar = '';
+buscar = '';
 
   constructor(public PeliculasSer: PeliculasService, public router: ActivatedRoute) {
     console.log();
